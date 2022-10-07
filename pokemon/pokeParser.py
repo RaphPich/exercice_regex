@@ -2,7 +2,7 @@ import re
 
 pokedex = open("pokemon\\pokemon.html")
 
-regex = re.compile("href=\"(/wiki/\w+)\" class=\".+\" title=\"(\w+)\"")
+regex = re.compile("href=\"(/wiki/\w+)\".+title=\"(\w+)\"")
 
 pokedict = {}
 i = 0
