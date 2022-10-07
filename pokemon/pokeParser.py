@@ -1,14 +1,8 @@
 import re
 
 pokedex = open("pokemon\\pokemon.html")
-
 regex = re.compile("href=\"(/wiki/\w+)\".+title=\"(\w+)\"")
 
-pokedict = {}
-i = 0
-
-for match in re.finditer(regex, pokedex.read()):
-    i += 1
-    pokedict[match.group(2)] = {"link":match.group(1), "number":i}
+pokedict = {match.group(2):{"link":match.group(1),"number":i} for i, match in enumerate(re.finditer(regex, pokedex.read()))}
 
 print(pokedict)
